@@ -1,6 +1,6 @@
 <template>
-    <v-container id="dashboard" fluid>
-        Dashboard
+    <v-container>
+        <span class="font-weight-medium">Hello, Kate</span>
     </v-container>
 </template>
 
@@ -11,9 +11,6 @@
 </script>
 
 <style scoped>
-    .container {
-        padding: 0;
-        margin: 0;
-    }
+
 
 </style>

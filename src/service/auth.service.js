@@ -4,12 +4,12 @@ import {AXIOS} from "../http-common";
 class AuthService {
     login(user) {
         return AXIOS.post(
-            'auth/signin', {
+            'auth/login', {
                 username: user.username,
                 password: user.password
             })
             .then(response => {
-                if (response.data.token) {
+                if (response.data.access_token) {
                     localStorage.setItem('user', JSON.stringify(response.data))
                 }
                 return response.data
@@ -24,7 +24,6 @@ class AuthService {
         return AXIOS.post('auth/signup', {
             username: user.username,
             password: user.password
-
         })
     }
 }

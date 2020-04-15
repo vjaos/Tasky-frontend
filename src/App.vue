@@ -1,7 +1,6 @@
 <template>
-    <v-app light>
-        <navigation v-if="!hide"/>
-        <nav-bar v-if="!hide"></nav-bar>
+    <v-app>
+        <nav-bar v-if="!hide"/>
         <v-content app>
             <v-container fluid>
                 <router-view></router-view>
@@ -11,11 +10,11 @@
 </template>
 
 <script>
-    import Navigation from "./components/NavigationDrawer";
+
     import NavBar from "./components/NavBar";
 
     export default {
-        components: {NavBar, Navigation},
+        components: {NavBar},
         computed: {
             currentUser() {
                 return this.$store.state.auth.user;
@@ -32,10 +31,9 @@
     #app {
         margin: 0;
         padding: 0;
-        font-family: 'RobotoDraft', 'Roboto', sans-serif;
+        font-family: 'Helvetica', 'RobotoDraft', 'Roboto', sans-serif;
         font-size: 14px;
-        background-color: #fff;
-        color: black;
+        background-color: #f2f2f2;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
