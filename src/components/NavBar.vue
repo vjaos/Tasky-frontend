@@ -2,10 +2,10 @@
     <nav>
         <v-navigation-drawer
                 app
+                mini-variant-width="65px"
                 mini-variant
                 permanent
-                class="nav-bar"
-                height="96%"
+                floating
         >
             <v-layout
                     align-center
@@ -13,7 +13,7 @@
                     column
                     fill-height
             >
-                <span class="text-uppercase mt-2 font-weight-bold display-1 yellow--text text--darken-2">
+                <span class="text-uppercase mt-4 font-weight-bold display-1 yellow--text text--darken-2">
                         T
                 </span>
                 <v-list dense flat>
@@ -40,13 +40,12 @@
                         icon
                         exact
                         link
-                        class="mb-2"
+                        class="mb-4"
                         active-class="deep-purple--text"
                 >
                     <v-icon>mdi-logout</v-icon>
                 </v-btn>
             </v-layout>
-
         </v-navigation-drawer>
     </nav>
 </template>
@@ -69,10 +68,6 @@
 </script>
 
 <style scoped>
-    .nav-bar {
-        margin: 1%;
-        border-radius: 12px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
-    }
+
 
 </style>
