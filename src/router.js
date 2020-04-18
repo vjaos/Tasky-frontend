@@ -1,25 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import LoginView from "./view/LoginView";
-import DashboardView from "./view/DashboardView";
-import ProjectView from "./view/ProjectView";
-import EventsView from "./view/EventsView";
-import BoardView from "./view/BoardView";
-
 
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
     mode: 'history',
-    routes: [
-        {path: '/', component: DashboardView},
-        {path: '/login', component: LoginView},
-        {path: '/projects', component: ProjectView},
-        {path: '/events', component: EventsView},
-        {path: '/board', component: BoardView},
-        {path: '*', redirect: '/'}
-    ]
+    // routes: [
+    //     {path: '/', component: DashboardView},
+    //     {path: '/login', component: LoginView},
+    //     {path: '/projects', component: ProjectView},
+    //     {path: '/events', component: EventsView},
+    //     {path: '/board', component: BoardView},
+    //     {path: '*', redirect: '/'}
+    // ]
 });
 
 // router.beforeEach((to, from, next) => {

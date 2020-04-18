@@ -1,7 +1,6 @@
 <template>
     <v-app>
-
-        <nav-bar v-if="!hide"/>
+        <nav-menu/>
         <v-content app>
             <v-container fluid>
                 <router-view></router-view>
@@ -12,10 +11,10 @@
 
 <script>
 
-    import NavBar from "./components/NavBar";
+    import NavMenu from "./components/NavMenu";
 
     export default {
-        components: { NavBar},
+        components: {NavMenu},
         computed: {
             currentUser() {
                 return this.$store.state.auth.user;
