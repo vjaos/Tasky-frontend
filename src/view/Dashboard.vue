@@ -1,10 +1,12 @@
 <template>
-    $END$
+    <project-card></project-card>
 </template>
 
 <script>
+    import ProjectCard from "../components/ProjectCard";
     export default {
-        name: "Dashboard"
+        name: "Dashboard",
+        components: {ProjectCard}
     }
 </script>
 

@@ -4,6 +4,8 @@
                 color="white"
                 dense
                 height="60px"
+                flat
+                elevation="1"
         >
             <v-app-bar-nav-icon>
 

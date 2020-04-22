@@ -4,6 +4,7 @@
         <v-content app>
             <v-container fluid>
                 <router-view></router-view>
+                <project-card></project-card>
             </v-container>
         </v-content>
     </v-app>
@@ -12,9 +13,10 @@
 <script>
 
     import NavMenu from "./components/NavMenu";
+    import ProjectCard from "./components/ProjectCard";
 
     export default {
-        components: {NavMenu},
+        components: {ProjectCard, NavMenu},
         computed: {
             currentUser() {
                 return this.$store.state.auth.user;
@@ -31,6 +33,7 @@
     #app {
         margin: 0;
         padding: 0;
+        background-color: #f6f7ff;
         font-family: 'Helvetica', 'RobotoDraft', 'Roboto', sans-serif;
         font-size: 14px;
         -webkit-font-smoothing: antialiased;
