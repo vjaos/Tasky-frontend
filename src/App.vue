@@ -4,7 +4,6 @@
         <v-content app>
             <v-container fluid>
                 <router-view></router-view>
-                <project-card></project-card>
             </v-container>
         </v-content>
     </v-app>
@@ -13,10 +12,9 @@
 <script>
 
     import NavMenu from "./components/NavMenu";
-    import ProjectCard from "./components/ProjectCard";
 
     export default {
-        components: {ProjectCard, NavMenu},
+        components: {NavMenu},
         computed: {
             currentUser() {
                 return this.$store.state.auth.user;
