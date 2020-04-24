@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <nav-menu/>
+
         <v-content app>
             <v-container fluid>
                 <router-view></router-view>
@@ -11,10 +11,8 @@
 
 <script>
 
-    import NavMenu from "./components/NavMenu";
-
     export default {
-        components: {NavMenu},
+        components: {},
         computed: {
             currentUser() {
                 return this.$store.state.auth.user;
@@ -31,7 +29,7 @@
     #app {
         margin: 0;
         padding: 0;
-        background-color: #f6f7ff;
+        background-color: #252a41;
         font-family: 'Helvetica', 'RobotoDraft', 'Roboto', sans-serif;
         font-size: 14px;
         -webkit-font-smoothing: antialiased;

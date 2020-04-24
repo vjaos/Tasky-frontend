@@ -1,41 +1,44 @@
 <template>
-    <v-card flat max-width="260px" width="260px">
-        <v-layout justify-space-around align-content-center column>
-
-            <v-card-title>
-                {{ project.name}}
-                <v-spacer></v-spacer>
-                <v-btn icon @click="show = !show">
-                    <v-icon>{{show ? 'mdi-minus': 'mdi-plus' }}</v-icon>
-                </v-btn>
-            </v-card-title>
-            <div v-show="!show">
-                <v-progress-linear :color="percent === 100 ? 'success' : 'blue'" rounded
-                                   v-model="percent"></v-progress-linear>
-            </div>
-            <v-expand-transition>
-                <div v-show="show">
-                    <v-list>
-                        <v-list-item
-                                v-for="(issue, i) in project.issues"
-                                :key="i"
-                        >
-                            <template>
-                                <div class="caption-1">
-                                    <v-chip v-if="!issue.isDone" outlined small color="blue"></v-chip>
-                                    <v-icon color="blue" v-else>mdi-checkbox-marked-circle</v-icon>
-                                    <span class="ml-2">{{issue.name}}</span>
-                                </div>
-                            </template>
-                        </v-list-item>
-                    </v-list>
-                    <v-btn width="214px" max-width="214px" elevation="0" class="mb-5 ml-5">
-                        <span class="font-weight-medium caption">VIEW PROJECT</span>
+    <v-card class="mx-auto">
+        <v-col>
+            <v-row class="mt-4 ml-5">
+                <v-flex xs8>
+                    <v-card-title class="font-weight-medium display-1">
+                        {{project.name}}
+                    </v-card-title>
+                    <v-card-subtitle class="mt-2">
+                        {{project.description}}
+                    </v-card-subtitle>
+                </v-flex>
+                <v-flex xs4 class="actions">
+                    Members
+                </v-flex>
+            </v-row>
+            <v-flex class="today-tasks">
+                <v-toolbar flat>
+                    <v-toolbar-title class="ml-5">
+                        <span class="font-weight-bold ">Today</span>
+                    </v-toolbar-title>
+                    <v-spacer></v-spacer>
+                    <v-btn text class="display-2 grey--text text--lighten-1">
+                        ...
                     </v-btn>
+                </v-toolbar>
+                <div v-for="issue in project.issues"
+                        :key="issue.id"
+                        class="ml-5"
+                >
+                    <v-row>
+                        <v-flex xs10>
+                            {{issue.name}}
+                        </v-flex>
+                        <v-flex xs2>
+                            <v-chip>{{issue.isDone}}</v-chip>
+                        </v-flex>
+                    </v-row>
                 </div>
-            </v-expand-transition>
-        </v-layout>
-
+            </v-flex>
+        </v-col>
     </v-card>
 </template>
 
@@ -69,6 +72,11 @@
 </script>
 
 <style scoped>
-
+    .project-card {
+        position: inherit;
+        background-color: white;
+        height: 100%;
+        max-height: 100%;
+    }
 
 </style>

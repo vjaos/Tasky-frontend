@@ -1,29 +1,37 @@
 <template>
-    <v-container>
-        <kanban :stages="stages"
-                :blocks="blocks"
-        >
-        </kanban>
-    </v-container>
+    <div class="dashboard">
+        <v-container fluid>
+            <v-layout row wrap>
+                <v-flex xs6>
+
+                </v-flex>
+                <v-flex xs6>
+                    <project-card
+                        :project="blocks[this.chosen]"
+                    >
+
+                    </project-card>
+                </v-flex>
+            </v-layout>
+        </v-container>
+    </div>
 </template>
 
 <script>
-    import Kanban from "../components/Kanban";
 
+    import ProjectCard from "../components/ProjectCard";
     export default {
         name: "Dashboard",
-        components: {Kanban},
+        components: {ProjectCard},
         data() {
             return {
-
-
-                stages: ['new', 'in-process', 'done', 'approved'],
+                chosen: 0,
                 blocks: [
                     {
                         id: 2,
-                        name: 'Kanban board',
+                        name: 'Cyber Punk',
                         status: 'new',
-                        description: 'Description',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum feugiat felis nec aliquet. In sit.',
                         issues: [
                             {
                                 name: 'Main Page Design',
@@ -123,12 +131,6 @@
 </script>
 
 <style scoped>
-    #create .v-speed-dial {
-        position: absolute;
-    }
 
-    #create .v-btn--floating {
-        position: relative;
-    }
 
 </style>
