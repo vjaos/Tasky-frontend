@@ -1,4 +1,4 @@
-# Tasky Frontend
+# Tasky UI
 
 ## Project setup
 ```
